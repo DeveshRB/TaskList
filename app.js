@@ -55,6 +55,7 @@ function getTasks() {
 function addTask(e) {
   if(taskInput.value === '') {
     alert('Add a task');
+    taskList.value.remove();
   }
 
   // Create li element
@@ -161,3 +162,8 @@ function filterTasks(e) {
     }
   });
 }
+
+// DARK THEME
+const checkbox = document.querySelector('.checkbox');
+
+checkbox.addEventListener('change',() => document.body.classList.toggle('dark'));
