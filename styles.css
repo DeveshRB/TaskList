@@ -14,6 +14,14 @@ body{
   transition: background 0.2s linear;
 }
 
+.card-content{
+  transition: background 0.2s linear;
+}
+
+.card-action{
+  transition: background 0.2s linear;
+}
+
 .container{
     margin-top: 20px;
 }
@@ -30,6 +38,11 @@ body{
     color: #111;   
 }
 
+.collection .collection-item.strike{
+  text-decoration: line-through;
+}
+
+
 .clear-tasks{
     margin-top: 3px;
 }
@@ -39,18 +52,24 @@ body{
 body.dark{
     background: #292c35;
   }
+
+.card-content.dark{
+    background: #292c35;
+    color: white;
+}
+
+.card-action.dark{
+  background: #292c35;
+  color: white;
+}
+
   
-  /* .checkbox{
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-  } */
+  
    #chk{
-    visibility: hidden;
     opacity: 0;
     position: absolute;
   }
-  
+
   .label {
     background-color: #111;
     display: flex;
@@ -75,7 +94,7 @@ body.dark{
     left: 2px;
     transition: transform 0.2s linear;
   }
-  
+
   .checkbox:checked + .label .ball{
     transform: translateX(24px);
   }
@@ -87,3 +106,36 @@ body.dark{
   .fa-sun {
       color: #f39c12;
   }
+
+/* CHROME DEV TOOLS */
+
+  [type="checkbox"]+label:before, [type="checkbox"]:not(.filled-in)+label:after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    z-index: 0;
+    border: 2px solid #5a5a5a;
+    border-radius: 1px;
+    margin-top: 2px;
+    -webkit-transition: .2s;
+    transition: .2s;
+    opacity: 0;
+}
+
+[type="checkbox"]+label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  top: -50px;
+}

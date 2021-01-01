@@ -167,3 +167,7 @@ function filterTasks(e) {
 const checkbox = document.querySelector('.checkbox');
 
 checkbox.addEventListener('change',() => document.body.classList.toggle('dark'));
+
+checkbox.addEventListener('change',() => document.querySelector(".card-content").classList.toggle('dark'));
+
+checkbox.addEventListener('change',() => document.querySelector(".card-action").classList.toggle('dark'));
