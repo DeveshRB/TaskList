@@ -20,6 +20,8 @@ function loadEventListeners() {
   clearBtn.addEventListener('click', clearTasks);
   // Filter tasks event
   filter.addEventListener('keyup', filterTasks);
+  // check
+  taskList.addEventListener("click", checkedTask);
 }
 
 function getTasks() {
@@ -161,6 +163,12 @@ function filterTasks(e) {
       task.style.display = 'none';
     }
   });
+}
+
+function checkedTask(e) {
+  if (e.target.tagName === "LI") {
+      e.target.classList.toggle("checked");
+  }
 }
 
 // DARK THEME

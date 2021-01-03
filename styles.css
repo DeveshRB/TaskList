@@ -47,6 +47,10 @@ body{
     margin-top: 3px;
 }
 
+ul li.checked {
+  text-decoration: line-through;
+}
+
 /* DARK THEME */
 
 body.dark{
